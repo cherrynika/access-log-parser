@@ -1,25 +1,30 @@
+import java.io.File;
 import java.util.Scanner;
 
 
 public class Main {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+        while (true) {
+            System.out.println("Введите путь к файлу :");
+            String path = new Scanner(System.in).nextLine();
+            File file = new File(path);
+            boolean fileExists = file.exists();
+            boolean isDirectory = file.isDirectory();
+            if (!fileExists || isDirectory) {
+                System.out.println("Указанный файл не существует или указанный путь является " +
+                        "путём к папке, а не к файлу,");
+                continue;
+            }
+            count++;
+            System.out.println("Путь указан верно");
+            System.out.println("Это файл номер: " + count);
 
-        System.out.println("Введите первое число: ");
-        int firstNumber = scanner.nextInt();
-
-        System.out.println("Введите второе число: ");
-        int secondNumber = scanner.nextInt();
-
-        int sum = firstNumber + secondNumber;
-        int difference = firstNumber - secondNumber;
-        int result = firstNumber * secondNumber;
-        double quotient = (double) firstNumber / secondNumber;
-        System.out.println("Сумма чисел: " + sum);
-        System.out.println("Разность чисел: " + difference);
-        System.out.println("Произведение чисел: " + result);
-        System.out.println("Частное чисел: " + quotient);
+        }
 
     }
+
 }
+
 
