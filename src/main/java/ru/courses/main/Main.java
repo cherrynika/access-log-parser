@@ -1,4 +1,4 @@
-package ru.courses.type;
+package ru.courses.main;
 
 import ru.courses.geometry.Line;
 import ru.courses.geometry.Point;
