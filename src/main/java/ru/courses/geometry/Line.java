@@ -1,6 +1,6 @@
 package ru.courses.geometry;
 
-import ru.courses.type.Measurable;
+import ru.courses.main.Measurable;
 
 public class Line implements Measurable {
     private double length;
